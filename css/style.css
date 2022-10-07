@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+*{
+    font-family: 'Orbitron', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 100%;
+    background-position: center;
+}
+
+.container{
+    padding: 1rem;
+    height: 100px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    gap: 50px;
+}
+
+.container::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    background: linear-gradient(0deg, #fff -58%, rgba(254,254,254,1) 0%, rgba(0,178,173,0) 51%, rgba(254,254,254,1) 100%);
+}
+
+.number{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(500px);
+    font-size: 32px;
+    transition: 0.25s;
+}
+
+.num{
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(calc(var(--i) * 36deg)) translateZ(75px);
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    transition: 0.25s;
+}
+
+button{
+    background-color: rgb(127,176,250);
+    padding: 1rem;
+    z-index: 1;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 250ms;
+    border-bottom: 2px solid rgb(96, 143, 245);
+    box-shadow: 0 5px 0 0 rgb(91, 156, 255);
+}
+
+button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 0 rgb(91, 156, 255);
+}
+
+button:active{
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 0 rgb(57, 127, 233);
+}
+
+.kremowka{
+    width: 400px;
+    height: 400px;
+    background-image: url("../assets/kremowka.png");
+    background-position: center;
+    background-size: 150%;
+    position: absolute;
+    display: none;
+    transition: 50ms;
+    top: 0;
+    left: 0;
+    animation: papiez 1s linear infinite;
+}
+
+@keyframes papiez{
+    0%{
+        top: 57%;
+        left: 44%;
+    }
+
+    10%{
+        top: 96%;
+        left: 3%;
+    }
+
+    20%{
+        top: 39%;
+        left: 64%;
+    }
+
+    30%{
+        top: 76%;
+        left: 92%;
+    }
+
+    40%{
+        left: 2%;
+        top: 29%;
+    }
+
+    50%{
+        top: 4%;
+        left: 64%;
+    }
+
+    60%{
+        top: 53%;
+        left: 86%;
+    }
+
+    70%{
+        top: 85%;
+        left: 26%;
+    }
+
+    80%{
+        top: 44%;
+        left: 58%;
+    }
+
+    90%{
+        top: 67%;
+        left: 29%;
+    }
+
+    100%{
+        top: 6%;
+        left: 26%;
+    }
+}
